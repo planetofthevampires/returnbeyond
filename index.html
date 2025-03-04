@@ -12,29 +12,16 @@
             color: #33ff33;
             font-family: 'Share Tech Mono', monospace;
             text-shadow: 0 0 5px #33ff33;
-            padding: 40px 20px 20px 20px;  /* Add top padding */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align at the top with padding */
-            flex-direction: column;
+            padding: 20px;
         }
-
-        .content {
-            text-align: center;
-            max-width: 800px; /* Optional: limit the content width */
-        }
-
         .glitch {
             animation: glitch 0.8s infinite;
         }
-
         @keyframes glitch {
             0% { text-shadow: 2px 2px red, -2px -2px blue; }
             50% { text-shadow: -2px -2px red, 2px 2px blue; }
             100% { text-shadow: 2px 2px red, -2px -2px blue; }
         }
-
         .log-entry {
             font-size: 1.2em;
             line-height: 1.5;
@@ -45,24 +32,20 @@
             padding-left: 10px;
             animation: typewriter 3s steps(40, end) forwards;
         }
-
         @keyframes typewriter {
             from { opacity: 0; width: 0; }
             to { opacity: 1; width: 100%; }
         }
-
         .redacted {
             background: black;
             color: black;
             padding: 2px;
             transition: 0.3s;
         }
-
         .redacted:hover {
             background: transparent;
             color: #ff3333;
         }
-
         #tiktokLink {
             margin-top: 20px;
             display: block;
@@ -77,15 +60,14 @@
         <source src="mystery-atmosphere.mp3" type="audio/mpeg">
     </audio>
     
-    <div class="content">
-        <h1 class="glitch">// SPACE STATION LOG //</h1>
-        <p class="log-entry">DATE: [REDACTED]
-        LOG ID: 0047-A
+    <h1 class="glitch">// SPACE STATION LOG //</h1>
+    <p class="log-entry">DATE: [REDACTED]
+LOG ID: 0047-A
 
-        MESSAGE: The crew has discovered something... anomalous. 
-        We were not alone. <span class="redacted">THEY ARE STILL HERE.</span></p>
-        
-        <a id="Follow" href="SeaofConsciousNothing.html">Follow the signal...</a>
-    </div>
+MESSAGE: The crew has discovered something... anomalous. 
+We were not alone. <span class="redacted">THEY ARE STILL HERE.</span></p>
+    <br><br><br><br>
+    <a id="Follow" href="SeaofConsciousNothing.html">Follow the signal...</a>
+    </script>
 </body>
 </html>
