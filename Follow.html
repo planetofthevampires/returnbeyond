@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 REDACTED SPACE LOG 🚨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        body {
+            background: black;
+            color: #33ff33;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 5px #33ff33;
+            padding: 20px;
+        }
+        .glitch {
+            animation: glitch 0.8s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px red, -2px -2px blue; }
+            50% { text-shadow: -2px -2px red, 2px 2px blue; }
+            100% { text-shadow: 2px 2px red, -2px -2px blue; }
+        }
+        .log-entry {
+            font-size: 1.2em;
+            line-height: 1.5;
+            opacity: 0;
+            white-space: pre-wrap;
+            overflow: hidden;
+            border-left: 2px solid #33ff33;
+            padding-left: 10px;
+            animation: typewriter 3s steps(40, end) forwards;
+        }
+        @keyframes typewriter {
+            from { opacity: 0; width: 0; }
+            to { opacity: 1; width: 100%; }
+        }
+        .redacted {
+            background: black;
+            color: black;
+            padding: 2px;
+            transition: 0.3s;
+        }
+        .redacted:hover {
+            background: transparent;
+            color: #ff3333;
+        }
+        .glitch-text {
+            font-size: 2em;
+            color: #ff0000;
+            filter: blur(2px);
+            transition: all 2s ease-in-out;
+        }
+        .glitch-text:hover {
+            filter: blur(0px);
+            color: #33ff33;
+            content: "H E L P U S";
+        }
+        .morse-code {
+            font-size: 1.5em;
+            color: #33ff33;
+            opacity: 0;
+            animation: flicker 1s infinite;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="mystery-atmosphere.mp3" type="audio/mpeg">
+    </audio>
+    
+    <h1 class="glitch">// SPACE STATION LOG //</h1>
+    <p class="log-entry">DATE: [REDACTED]
+LOG ID: 0047-A
+
+MESSAGE: The crew has discovered something... anomalous. 
+We were not alone. <span class="redacted">THEY ARE STILL HERE.</span></p>
+    
+    <p class="glitch-text">H̷̜͓̬͙̟̜̅̇̋̏̒̍̀͊̈́̏̈́̚̚̚͝͠͠͠E̶̡̙̪͓̠͂̋̑̽̏̀̓̀̑͌́͑͛̈́̎͘͜͠͠L̷͉̳͙͆̓̎̀̓̇͊̆͆̽͗̈́̈́͋̾̍́̀̀̚̚P̷̢̥̖͉̜̲̂̏̏̎̍͋̐̆̓͆̐̃̓̒͛̍̾̽̑͒̕̕̕Ư̷̳͎̺̺̓̄̃̆̿̀̏̈́̎̋͗͘S̷̖̯̩̘̮̪̤̋̅̂̍̇̏̏̀͂̑̀͒͗̉͘͘͘͘̚͝</p>
+    
+<br><br>    <p class="morse-code">.... . .-.. .--. ..- ...</p>
+<br><br>    
+    <a id="tiktokLink" href="https://www.tiktok.com/@ubaer666" target="_blank">Follow the signal...</a>
+    <a id="secretLink" href="hidden-log.html" style="display: none;">Access Hidden Log</a>
+    
+    <input type="password" id="password" placeholder="Enter Passcode" />
+    <button onclick="checkPassword()">Access Hidden Log</button>
+    
+    <script>
+        function checkPassword() {
+            let input = document.getElementById("password").value;
+            if (input === "HELPUS") {
+                document.getElementById("secretLink").style.display = "block";
+                alert("Access Granted. Follow the link.");
+            } else {
+                alert("Access Denied.");
+            }
+        }
+    </script>
+</body>
+</html>
