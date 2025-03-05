@@ -18,44 +18,39 @@
             animation: glitch 0.8s infinite;
         }
         @keyframes glitch {
-            0% { text-shadow: 2px 2px red, -2px -2px blue; }
-            50% { text-shadow: -2px -2px red, 2px 2px blue; }
-            100% { text-shadow: 2px 2px red, -2px -2px blue; }
+            0% { text-shadow: 2px 2px red, -2px -2px blue; transform: translate(0, 0); }
+            25% { text-shadow: -2px -2px red, 2px 2px blue; transform: translate(1px, -1px); }
+            50% { text-shadow: 2px -2px red, -2px 2px blue; transform: translate(-1px, 1px); }
+            75% { text-shadow: -2px 2px red, 2px -2px blue; transform: translate(1px, 1px); }
+            100% { text-shadow: 2px 2px red, -2px -2px blue; transform: translate(0, 0); }
         }
         .log-entry {
             font-size: 1.2em;
             line-height: 1.5;
-            opacity: 0;
+            opacity: 1;
             white-space: pre-wrap;
             overflow: hidden;
             border-left: 2px solid #33ff33;
-            padding-left: 10px;
+            padding-left: 20px;
+            max-width: 0;
             animation: typewriter 3s steps(40, end) forwards;
         }
         @keyframes typewriter {
-            from { opacity: 0; width: 0; }
-            to { opacity: 1; width: 100%; }
+            from { max-width: 0; }
+            to { max-width: 100%; }
         }
         .redacted {
             background: black;
             color: black;
             padding: 2px;
             transition: 0.3s;
+            cursor: pointer; /* Added to indicate interaction */
         }
         .redacted:hover {
             background: transparent;
             color: #ff3333;
-        }
-        .glitch-text {
-            font-size: 2em;
-            color: #ff0000;
-            filter: blur(2px);
-            transition: all 2s ease-in-out;
-        }
-        .glitch-text:hover {
-            filter: blur(0px);
-            color: #33ff33;
-            content: "H E L P U S";
+            text-shadow: 0 0 10px #ff3333;
+            animation: glitch 0.3s infinite;
         }
         .morse-code {
             font-size: 1.5em;
@@ -68,22 +63,30 @@
             50% { opacity: 0; }
             100% { opacity: 1; }
         }
+        #link {
+            display: block;
+            color: #348bc9;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        #link:hover {
+            text-shadow: 0 0 12px #00ffcc, 0 0 20px #00ffcc;
+        }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="mystery-atmosphere.mp3" type="audio/mpeg">
-    </audio>
     
     <h1 class="glitch">// SPACE STATION LOG //</h1>
     <p class="log-entry">DATE: [REDACTED]
 LOG ID: 0047-B
 
 MESSAGE: The crew has discovered something...  
+
 <i>We were not like them.</i> <span class="redacted">WHAT ARE THEY</span></p>
     
-<br><br>    <p class="morse-code">.... . .-.. .--. ..- ...</p>
-<br><br>
+    <br><br><p class="morse-code">.... . .-.. .--. ..- ...</p>
+    <br><br>
     <a id="secretLink" href="BTPOTV-pages.pdf" style="display: none;">Access Hidden Log</a>
     
     <input type="password" id="password" placeholder="Enter Passcode" />
@@ -100,9 +103,7 @@ MESSAGE: The crew has discovered something...
             }
         }
     </script>
-    <br><br><br><br>    
-    <a id="tiktokLink" href="https://www.tiktok.com/@ubaer666" target="_blank">Keep Following...</a>
-    or
-    <a id="Return" href="https://ubaer666.itch.io/return-to-the-planet-of-the-vampires">Return.</a>
+    <br><br><br><br>  
+    <a id="link" href="https://www.tiktok.com/@ubaer666" target="_blank">Keep Following...</a> or <a id="link" href="https://ubaer666.itch.io/return-to-the-planet-of-the-vampires">Return.</a>
 </body>
 </html>
