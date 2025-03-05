@@ -25,16 +25,17 @@
         .log-entry {
             font-size: 1.2em;
             line-height: 1.5;
-            opacity: 0;
+            opacity: 1;
             white-space: pre-wrap;
             overflow: hidden;
             border-left: 2px solid #33ff33;
             padding-left: 20px;
+            max-width: 0;
             animation: typewriter 3s steps(40, end) forwards;
         }
         @keyframes typewriter {
-            from { opacity: 0; width: 0; }
-            to { opacity: 1; width: 100%; }
+            from { max-width: 0; }
+            to { max-width: 100%; }
         }
         .redacted {
             background: black;
@@ -45,29 +46,35 @@
         .redacted:hover {
             background: transparent;
             color: #ff3333;
+            text-shadow: 0 0 10px #ff3333;
+            animation: glitch 0.3s infinite;
         }
-        #tiktokLink {
-            margin-top: 20px;
+        #follow {
             display: block;
-            color: #33ff33;
+            margin-top: 20px;
+            color: #348bc9;
             text-decoration: none;
-            font-size: 1.4em;
+            font-size: 1.2em;
+            padding: 5px 0;
+            transition: 0.3s;
+            text-indent: 10px;
+            margin-left: 10px;
+        }
+        #follow:hover {
+            text-shadow: 0 0 12px #00ffcc, 0 0 20px #00ffcc;
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="mystery-atmosphere.mp3" type="audio/mpeg">
-    </audio>
     
     <h1 class="glitch">// SPACE STATION LOG //</h1>
     <p class="log-entry">DATE: [REDACTED]
 LOG ID: 0047-A
 
-MESSAGE: The crew has discovered something... anomalous. 
+MESSAGE: The crew has discovered something... anomalous.
+
 <i>We were not alone.</i> <span class="redacted">THEY ARE STILL HERE.</span></p>
-    <br><br><br><br>
-    <a id="Follow" href="SeaofConsciousNothing.html">Follow the signal...</a>
-    </script>
+    <br><br><br>
+    <a id="follow" href="SeaofConsciousNothing.html">Follow the signal...</a>
 </body>
 </html>
